@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import moment from 'moment'; //biblioteca para datas
-import 'bootstrap/dist/css/bootstrap.min.css'; //adição do bootstrap
+import moment from 'moment';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
