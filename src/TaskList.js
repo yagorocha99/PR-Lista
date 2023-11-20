@@ -6,19 +6,18 @@ import Header from './Header';
 import Footer from './Footer';
 
 const TaskList = () => {
-  //estado para armazenar a lista de tarefas
+  
   const [tasks, setTasks] = useState([]);
-  //estado para armazenar os detalhes da nova tarefa
+  
   const [newTask, setNewTask] = useState({
     taskName: '',
     taskDefinition: '',
     deadline: '',
     completedDate: '',
     location: '',
-    importance: 'Pouca', //valor padrão
+    importance: 'Pouca', 
   });
 
-  //função para adicionar uma nova tarefa à lista
   const addTask = () => {
     const formattedTask = {
       ...newTask,
@@ -32,21 +31,18 @@ const TaskList = () => {
       deadline: '',
       completedDate: '',
       location: '',
-      importance: 'Pouca', //reseta para o valor padrão
+      importance: 'Pouca',
     });
   };
 
-  //função para lidar com a mudança nos campos do formulário
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    //trunca o valor para no máximo 255 caracteres
     const truncatedValue = name === 'taskDefinition' ? value.slice(0, 255) : value;
 
     setNewTask({ ...newTask, [name]: truncatedValue });
   };
 
-  //função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask();
